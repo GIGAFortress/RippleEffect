@@ -18,10 +18,10 @@ import com.andexert.library.RippleView;
 import java.util.ArrayList;
 
 
-public class MainActivity extends ActionBarActivity
-{
-    private final Boolean isRecyclerview = false;
+public class MainActivity extends ActionBarActivity {
+    private final Boolean isRecyclerview = false;   //
     private ArrayList<String> sourcesArrayList = new ArrayList<String>();
+    private final boolean enableList =false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +37,9 @@ public class MainActivity extends ActionBarActivity
 
         setSupportActionBar(toolbar);
 
-        rippleView.setOnClickListener(new View.OnClickListener()
-        {
+        rippleView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Log.e("Sample", "Click Rect !");
             }
         });
@@ -51,11 +49,9 @@ public class MainActivity extends ActionBarActivity
                 Log.d("Sample", "Ripple completed");
             }
         });
-        textView.setOnClickListener(new View.OnClickListener()
-        {
+        textView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Log.e("Sample", "Click rect child !");
             }
         });
@@ -76,41 +72,38 @@ public class MainActivity extends ActionBarActivity
         sourcesArrayList.add("Asus");
         sourcesArrayList.add("Apple");
 
+        if(enableList) {
+            if (isRecyclerview) {
+                RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        if (isRecyclerview)
-        {
-            RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-            recyclerView.setHasFixedSize(true);
-            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-            recyclerView.setLayoutManager(layoutManager);
+                recyclerView.setHasFixedSize(true);
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+                recyclerView.setLayoutManager(layoutManager);
 
-            CustomAdapter customAdapter = new CustomAdapter();
-            customAdapter.updateList(sourcesArrayList);
+                CustomAdapter customAdapter = new CustomAdapter();
+                customAdapter.updateList(sourcesArrayList);
 
-            customAdapter.setOnTapListener(new OnTapListener()
-            {
-                @Override
-                public void onTapView(int position)
-                {
-                    Log.e("MainActivity", "Tap item : " + position);
-                }
-            });
-            recyclerView.setAdapter(customAdapter);
-        }
-        else
-        {
-            ListView listView = (ListView) findViewById(R.id.listview);
-            CustomListViewAdapter customListViewAdapter = new CustomListViewAdapter(this);
-            customListViewAdapter.updateList(sourcesArrayList);
-            listView.setAdapter(customListViewAdapter);
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-            {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-                {
-                    Log.e("MainActivity", "ListView tap item : " + position);
-                }
-            });
+                recyclerView.setAdapter(customAdapter);
+                customAdapter.setOnTapListener(new OnTapListener() {
+                    @Override
+                    public void onTapView(int position) {
+                        Log.e("MainActivity", "Tap item : " + position);
+                    }
+                });
+            } else {
+                ListView listView = (ListView) findViewById(R.id.listview);
+
+                CustomListViewAdapter customListViewAdapter = new CustomListViewAdapter(this);
+                customListViewAdapter.updateList(sourcesArrayList);
+
+                listView.setAdapter(customListViewAdapter);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Log.e("MainActivity", "ListView tap item : " + position);
+                    }
+                });
+            }
         }
     }
 

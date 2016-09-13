@@ -4,5 +4,8 @@
     <string name="app_name">RippleEffect</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="DoubleRipple">ripple:rv_type = doubleRipple\nripple:rv_zoom = true</string>
+    <string name="simpleRipple">ripple:rv_type = simpleRipple\nripple:rv_zoom = false</string>
+    <string name="rectangle">ripple:rv_type = rectangle\nripple:rv_zoom = false</string>
 
 </resources>
