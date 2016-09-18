@@ -93,78 +93,85 @@
         android:layout_below="@+id/actionbar"
         android:orientation="vertical">
 
+        <!--ScrollView can host only one direct child-->
+        <!--内部只允许有一个并列子元素-->
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.andexert.library.RippleView
-                android:id="@+id/rect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/selector_row"
-                android:padding="20dp"
-                ripple:rv_type="doubleRipple"
-                ripple:rv_zoom="true">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/rect_child"
-                    android:layout_width="match_parent"
+                <com.andexert.library.RippleView
+                    android:id="@+id/rect"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:gravity="left"
-                    android:text="@string/DoubleRipple"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/selector_row"
+                    android:padding="20dp"
+                    ripple:rv_type="doubleRipple"
+                    ripple:rv_zoom="true">
 
-            </com.andexert.library.RippleView>
+                    <TextView
+                        android:id="@+id/rect_child"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="left"
+                        android:text="@string/DoubleRipple"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
 
-            <com.andexert.library.RippleView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/selector_row"
-                android:padding="20dp"
-                ripple:rv_type="simpleRipple"
-                ripple:rv_zoom="false">
+                </com.andexert.library.RippleView>
 
-                <TextView
-                    android:layout_width="match_parent"
+                <com.andexert.library.RippleView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:gravity="left"
-                    android:text="@string/simpleRipple"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/selector_row"
+                    android:padding="20dp"
+                    ripple:rv_type="simpleRipple"
+                    ripple:rv_zoom="false">
 
-            </com.andexert.library.RippleView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="left"
+                        android:text="@string/simpleRipple"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
 
-            <com.andexert.library.RippleView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/selector_row"
-                android:padding="20dp"
-                ripple:rv_type="rectangle"
-                ripple:rv_zoom="false">
+                </com.andexert.library.RippleView>
 
-                <TextView
-                    android:layout_width="match_parent"
+                <com.andexert.library.RippleView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:gravity="left"
-                    android:text="@string/rectangle"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/selector_row"
+                    android:padding="20dp"
+                    ripple:rv_type="rectangle"
+                    ripple:rv_zoom="false">
 
-            </com.andexert.library.RippleView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="left"
+                        android:text="@string/rectangle"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
 
+                </com.andexert.library.RippleView>
+            </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
     </LinearLayout>
 
